@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -30,6 +31,7 @@ public class MapFigActivity extends AppCompatActivity {
                                 , areaString4, subAreaString4, numberString4;
 
     private TextView txtPlant,txtFarm,txtAnimal,txtHouse;
+    private ImageView plantImageView, farmImageView, animalImageView, houseImageView;
 
     private int subAreaNumber1,subAreaNumber2,subAreaNumber3,subAreaNumber4;
     private int intNumber1,intNumber2,intNumber3,intNumber4;
@@ -43,6 +45,12 @@ public class MapFigActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map_fig);
+
+        //Bind Widget
+        bindWidget();
+
+        //Show Image
+        showImage();
 
         //Request Database
         objDesignTABLE = new DesignTABLE(this);
@@ -64,6 +72,29 @@ public class MapFigActivity extends AppCompatActivity {
 
 
     }// Main Method
+
+    private void bindWidget() {
+
+        plantImageView = (ImageView) findViewById(R.id.imageView8);
+        farmImageView = (ImageView) findViewById(R.id.imageView9);
+        animalImageView = (ImageView) findViewById(R.id.imageView10);
+        houseImageView = (ImageView) findViewById(R.id.imageView11);
+
+    }   // bindWidget
+
+    private void showImage() {
+
+        int intPlant = getIntent().getIntExtra("plant", R.drawable.animal0);
+        int intFarm = getIntent().getIntExtra("farm", R.drawable.animal0);
+        int intAnimal = getIntent().getIntExtra("animal", R.drawable.animal0);
+        int intHouse = getIntent().getIntExtra("house", R.drawable.animal0);
+
+        plantImageView.setImageResource(intPlant);
+        farmImageView.setImageResource(intFarm);
+        animalImageView.setImageResource(intAnimal);
+        houseImageView.setImageResource(intHouse);
+
+    }   // showImage
 
     public void clickSaveDesign(View view) {
 

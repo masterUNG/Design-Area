@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -16,6 +17,7 @@ public class SpinnerFigActivity extends AppCompatActivity {
     private Spinner plantSpinner, farmSpinner, animalSpinner, homeSpinner;
     private Float bigAreaAFloat;
     private TextView txtPlant,txtFarm,txtAnimal,txtHouse;
+    private int plantChooseAnInt, animalChooseAnInt, farmChooseAnInt, houseChooseAnInt;
 
     String userString, memberString;
 
@@ -60,15 +62,33 @@ public class SpinnerFigActivity extends AppCompatActivity {
         sentToAnswer.putExtra("BigArea", bigAreaAFloat); //ส่งค่าตัวแปรพื้นที่ไปหน้า SubP1
         sentToAnswer.putExtra("User", userString);
 
+        MyStaticData objMyStaticData = new MyStaticData();
+
+        String[] plantStrings = objMyStaticData.plantStrings;
+        String[] farmStrings = objMyStaticData.farmString;
+        String[] animalStrings = objMyStaticData.animalStrings;
+        String[] houseStrings = objMyStaticData.homeStrings;
+        int[] plantInts = objMyStaticData.plantInts;
+        int[] farmInts = objMyStaticData.farmInts;
+        int[] animalInts = objMyStaticData.animalInts;
+        int[] houseInts = objMyStaticData.houseInts;
+
+
         sentToAnswer.putExtra("strPlant",strPlant);
         sentToAnswer.putExtra("strFarm", strFarm);
         sentToAnswer.putExtra("strAnimal",strAnimal);
         sentToAnswer.putExtra("strHouse",strHouse);
 
-        sentToAnswer.putExtra("strSpinner1",strSpinner1);
-        sentToAnswer.putExtra("strSpinner2",strSpinner2);
-        sentToAnswer.putExtra("strSpinner3",strSpinner3);
-        sentToAnswer.putExtra("strSpinner4",strSpinner4);
+        sentToAnswer.putExtra("strSpinner1",plantStrings[plantChooseAnInt]);
+        sentToAnswer.putExtra("strSpinner2",farmStrings[farmChooseAnInt]);
+        sentToAnswer.putExtra("strSpinner3",animalStrings[animalChooseAnInt]);
+        sentToAnswer.putExtra("strSpinner4",houseStrings[houseChooseAnInt]);
+
+        sentToAnswer.putExtra("plant", plantInts[plantChooseAnInt]);
+        sentToAnswer.putExtra("farm", farmInts[farmChooseAnInt]);
+        sentToAnswer.putExtra("animal", animalInts[animalChooseAnInt]);
+        sentToAnswer.putExtra("house", houseInts[houseChooseAnInt]);
+
 
 
         startActivity(sentToAnswer);
@@ -84,10 +104,10 @@ public class SpinnerFigActivity extends AppCompatActivity {
         strHouse = txtHouse.getText().toString();
 
         //แปลงค่า spinner
-        strSpinner1 = String.valueOf(plantSpinner.getSelectedItem());
-        strSpinner2 = String.valueOf(farmSpinner.getSelectedItem());
-        strSpinner3 = String.valueOf(animalSpinner.getSelectedItem());
-        strSpinner4 = String.valueOf(homeSpinner.getSelectedItem());
+//        strSpinner1 = String.valueOf(plantSpinner.getSelectedItem());
+//        strSpinner2 = String.valueOf(farmSpinner.getSelectedItem());
+//        strSpinner3 = String.valueOf(animalSpinner.getSelectedItem());
+//        strSpinner4 = String.valueOf(homeSpinner.getSelectedItem());
 
     }
 
@@ -103,6 +123,20 @@ public class SpinnerFigActivity extends AppCompatActivity {
         //เครื่องจักรที่นำลิสเหล่านี้เข้าไปใน spinner
         ArrayAdapter<String> myAdapter1 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, myListSpinner1);
         plantSpinner.setAdapter(myAdapter1);
+
+        plantSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                plantChooseAnInt = i;
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+                plantChooseAnInt = 0;
+            }
+        });
+
+
     }// chooseSpinner1
 
     private void chooseSpinner2() {
@@ -115,6 +149,22 @@ public class SpinnerFigActivity extends AppCompatActivity {
         //เครื่องจักรที่นำลิสเหล่านี้เข้าไปใน spinner
         ArrayAdapter<String> myAdapter2 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item,myListSpinner2);
         farmSpinner.setAdapter(myAdapter2);
+
+        farmSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                farmChooseAnInt = i;
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+                farmChooseAnInt = 0;
+            }
+        });
+
+
+
+
     }// chooseSpinner2
 
     private void chooseSpinner3() {
@@ -131,6 +181,19 @@ public class SpinnerFigActivity extends AppCompatActivity {
         //เครื่องจักรที่นำลิสเหล่านี้เข้าไปใน spinner
         ArrayAdapter<String> myAdapter3 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, myListSpinner3);
         animalSpinner.setAdapter(myAdapter3);
+
+        animalSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                animalChooseAnInt = i;
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+                animalChooseAnInt = 0;
+            }
+        });
+
     }// chooseSpinner3
 
     private void chooseSpinner4() {
@@ -145,6 +208,21 @@ public class SpinnerFigActivity extends AppCompatActivity {
         //เครื่องจักรที่นำลิสเหล่านี้เข้าไปใน spinner
         ArrayAdapter<String> myAdapter4 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, myListSpinner4);
         homeSpinner.setAdapter(myAdapter4);
+
+        homeSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                houseChooseAnInt = i;
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+                houseChooseAnInt = 0;
+            }
+        });
+
+
+
     }// chooseSpinner4
 
 }// Main Class
