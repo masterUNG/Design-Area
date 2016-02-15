@@ -1,0 +1,61 @@
+<resources>
+    <string name="app_name">Design Area</string>
+
+    <string name="showTimeDialogFrom">showTimeDialogFrom</string>
+
+    <string-array name="Plant">
+        <item>ทุเรียน</item>
+        <item>มังคุด</item>
+        <item>ข้าวโพด</item>
+        <item>ยางพารา</item>
+    </string-array>
+
+    <string-array name="Farm">
+        <item>ข้าวหอมมะลิ</item>
+        <item>ข้าวกล้อง</item>
+
+    </string-array>
+
+    <string-array name="Animal">
+        <item>หมู</item>
+        <item>ไก่</item>
+        <item>เป็ด</item>
+        <item>ปลานิล</item>
+        <item>ปลาดุก</item>
+        <item>ปลาสลิด</item>
+    </string-array>
+
+    <string-array name="House">
+        <item>เพาะเห็ด</item>
+        <item>ปุ๋ยหมัก</item>
+        <item>บ้าน</item>
+    </string-array>
+
+    <string-array name="NatureArea">
+        <item>พื้นที่ราบสูง</item>
+        <item>พื้นที่ราบ</item>
+        <item>พื้นที่ราบลุ่ม</item>
+        <item>พื้นที่ดอน</item>
+    </string-array>
+
+    <string-array name="Weather">
+        <item>อากาศหนาว</item>
+        <item>เขตร้อน</item>
+        <item>ทนต่อสภาพอากาศแปรปรวน</item>
+        <item>อากาศร้อนชื้น</item>
+    </string-array>
+
+    <string-array name="Cost">
+        <item>ต่ำ</item>
+        <item>ปานกลาง</item>
+        <item>สูง</item>
+    </string-array>
+
+    <string-array name="Profit">
+        <item>ต่ำ</item>
+        <item>ปานกลาง</item>
+        <item>สูง</item>
+    </string-array>
+
+
+</resources>

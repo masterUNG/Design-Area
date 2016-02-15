@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="kmitlcomscience.kanyaporn.chananan.designarea.FertilizerActivity"
+    android:background="#4ba42b">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="200dp"
+        android:layout_height="110dp"
+        android:id="@+id/linearLayout2">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="พื้นที่ที่ : "
+            android:id="@+id/textView13"
+            android:textSize="18sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ประเภท : "
+            android:id="@+id/textView14"
+            android:textSize="18sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="จำนวน : "
+            android:id="@+id/textView15"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="200dp"
+        android:layout_height="110dp"
+        android:id="@+id/linearLayout3"
+        android:layout_marginTop="110dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="พื้นที่ที่ : "
+            android:id="@+id/textView16"
+            android:textSize="18sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ประเภท : "
+            android:id="@+id/textView17"
+            android:textSize="18sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="จำนวน : "
+            android:id="@+id/textView18"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="200dp"
+        android:layout_height="110dp"
+        android:id="@+id/linearLayout4"
+        android:layout_marginTop="220dp" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="พื้นที่ที่ : "
+            android:id="@+id/textView19"
+            android:textSize="18sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ประเภท : "
+            android:id="@+id/textView20"
+            android:textSize="18sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="จำนวน : "
+            android:id="@+id/textView21"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="200dp"
+        android:layout_height="110dp"
+        android:id="@+id/linearLayout5"
+        android:layout_marginTop="330dp" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="พื้นที่ที่ : "
+            android:id="@+id/textView22"
+            android:textSize="18sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ประเภท : "
+            android:id="@+id/textView23"
+            android:textSize="18sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="จำนวน : "
+            android:id="@+id/textView24"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="200dp"
+        android:layout_height="440dp"
+        android:layout_marginLeft="200dp"
+        android:id="@+id/linearLayout6">
+
+        <ImageView
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:id="@+id/imageView12"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/tree1"
+            android:onClick="clickCalFer1" />
+
+        <ImageView
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:id="@+id/imageView13"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/rice1"
+            android:onClick="clickCalFer2" />
+
+        <ImageView
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:id="@+id/imageView14"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/duck2"
+            android:onClick="clickCalFer3" />
+
+        <ImageView
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:id="@+id/imageView15"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/mushroom1"
+            android:onClick="clickCalFer4" />
+    </LinearLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Next"
+        android:id="@+id/button6"
+        android:onClick="clickSaveFertilizer"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/linearLayout5"
+        android:layout_alignEnd="@+id/linearLayout5" />
+
+</RelativeLayout>
